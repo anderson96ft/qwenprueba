@@ -1,0 +1,31 @@
+{
+  "name": "gazelle-clone",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:web\" \"pnpm dev:functions\"",
+    "dev:web": "cd apps/web && pnpm dev",
+    "dev:functions": "cd functions && pnpm serve",
+    "build": "turbo run build",
+    "build:web": "cd apps/web && pnpm build",
+    "build:firebase": "cd packages/firebase && pnpm build",
+    "build:functions": "cd functions && pnpm build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "firebase:login": "firebase login",
+    "firebase:init": "firebase init",
+    "firebase:deploy": "firebase deploy",
+    "firebase:emulators": "firebase emulators:start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "turbo": "^2.0.0",
+    "firebase-tools": "^13.0.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
